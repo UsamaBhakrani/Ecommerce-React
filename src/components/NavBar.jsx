@@ -26,6 +26,7 @@ const NavBar = () => {
             );
           })}
         </ul>
+        <CartButtons />
       </div>
     </Nav>
   );
