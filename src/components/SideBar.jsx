@@ -6,14 +6,30 @@ import CartButtons from "./CartButtons";
 import logo from "../assets/logo.svg";
 
 const SideBar = () => {
-  const isOpen = true;
+  const isOpen = false;
 
   return (
     <SidebarWrapper>
-      <aside className={isOpen ? "sidebar show-sidebar" : "show-sidebar"}>
+      <aside className={isOpen ? "sidebar show-sidebar" : "sidebar"}>
         <div className="sidebar-header">
           <img src={logo} alt="Timber Tinder" className="logo" />
+          <button className="close-btn" type="button">
+            <FaTimes />
+          </button>
         </div>
+        <ul className="links">
+          {links.map(({ id, text, url }) => {
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            );
+          })}
+          <li>
+            <Link to="/checkout">Checkout</Link>
+          </li>
+        </ul>
+        <CartButtons />
       </aside>
     </SidebarWrapper>
   );
