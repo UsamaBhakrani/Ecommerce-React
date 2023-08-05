@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useProductsContext } from "../context/products_context";
 
 const CartButtons = () => {
+  const { closeSideBar } = useProductsContext();
   return (
     <Wrapper className="cart-btn-wrapper">
-      <Link to="cart" className="cart-btn">
+      <Link to="cart" className="cart-btn" onClick={closeSideBar}>
         Cart
         <span className="cart-container">
           <FaShoppingCart />
@@ -13,8 +15,8 @@ const CartButtons = () => {
         </span>
       </Link>
 
-      <Link className="cart-btn">
-        <button type="button" className="auth-btn">
+      <Link className="cart-btn" onClick={closeSideBar}>
+        <button type="button" className="auth-btn" >
           Login
           <FaUserPlus />
         </button>

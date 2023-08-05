@@ -7,17 +7,17 @@ import logo from "../assets/logo.svg";
 import { useProductsContext } from "../context/products_context";
 
 const SideBar = () => {
-  const data = useProductsContext();
-  console.log(data);
-  
-  const isOpen = false;
+  const { isSideBarOpen, closeSideBar } = useProductsContext();
+  console.log(isSideBarOpen);
 
   return (
     <SidebarWrapper>
-      <aside className={isOpen ? "sidebar show-sidebar" : "sidebar"}>
+      <aside
+        className={`${!isSideBarOpen ? "sidebar show-sidebar" : "sidebar"}`}
+      >
         <div className="sidebar-header">
           <img src={logo} alt="Timber Tinder" className="logo" />
-          <button className="close-btn" type="button">
+          <button className="close-btn" type="button" onClick={closeSideBar}>
             <FaTimes />
           </button>
         </div>
@@ -25,12 +25,16 @@ const SideBar = () => {
           {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSideBar}>
+                  {text}
+                </Link>
               </li>
             );
           })}
           <li>
-            <Link to="/checkout">Checkout</Link>
+            <Link to="/checkout" onClick={closeSideBar}>
+              Checkout
+            </Link>
           </li>
         </ul>
         <CartButtons />

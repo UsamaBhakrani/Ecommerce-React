@@ -7,10 +7,8 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <React.StrictMode>
-      <ProductsProvider>
-        <App />
-      </ProductsProvider>
-    </React.StrictMode>
+    <ProductsProvider>
+      <App />
+    </ProductsProvider>
   </BrowserRouter>
 );

@@ -14,14 +14,13 @@ import {
 } from "../actions";
 
 const initialState = {
-  isSidebarOpen: false,
+  isSideBarOpen: false,
 };
 
 const ProductsContext = React.createContext();
 
 const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
 
   const openSideBar = () => {
     dispatch({ type: SIDEBAR_OPEN });
