@@ -4,8 +4,12 @@ import { styled } from "styled-components";
 import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
 import logo from "../assets/logo.svg";
+import { useProductsContext } from "../context/products_context";
 
 const SideBar = () => {
+  const data = useProductsContext();
+  console.log(data);
+  
   const isOpen = false;
 
   return (
