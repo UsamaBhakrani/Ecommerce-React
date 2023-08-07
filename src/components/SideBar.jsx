@@ -12,9 +12,7 @@ const SideBar = () => {
 
   return (
     <SidebarWrapper>
-      <aside
-        className={`${!isSideBarOpen ? "sidebar show-sidebar" : "sidebar"}`}
-      >
+      <aside className={isSideBarOpen ? "sidebar show-sidebar" : "sidebar"}>
         <div className="sidebar-header">
           <img src={logo} alt="Timber Tinder" className="logo" />
           <button className="close-btn" type="button" onClick={closeSideBar}>
