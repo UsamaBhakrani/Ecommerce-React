@@ -64,7 +64,7 @@ const SidebarWrapper = styled.div`
   }
   .logo {
     justify-self: center;
-    height: 45px;
+    height: 30px;
   }
   .links {
     margin-bottom: 2rem;
