@@ -1,9 +1,17 @@
-import React from 'react'
+import { styled } from "styled-components";
+import { Hero } from "../components";
 
 const CheckoutPage = () => {
   return (
-    <div>CheckoutPage</div>
-  )
-}
+    <main>
+      <Hero title="Checkout" />
+      <Wrapper className="page">
+        <h2>CheckOut Here</h2>
+      </Wrapper>
+    </main>
+  );
+};
 
-export default CheckoutPage
+const Wrapper = styled.div``;
+
+export default CheckoutPage;
