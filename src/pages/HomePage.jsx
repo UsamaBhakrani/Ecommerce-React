@@ -1,7 +1,14 @@
-import { Services, Hero, Contact, FeaturedProducts } from "../components";
+import { Services, HomeHero, Contact, FeaturedProducts } from "../components";
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <main>
+      <HomeHero />
+      <FeaturedProducts />
+      <Services />
+      <Contact />
+    </main>
+  );
 };
 
 export default HomePage;
