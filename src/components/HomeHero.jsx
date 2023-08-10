@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import Hero1 from "../assets/Hero1.jpeg";
-import Hero2 from "../assets/Hero2.jpeg";
+import HeroOne from "../assets/hero1.jpeg";
+import HeroTwo from "../assets/hero2.jpeg";
 import { Link } from "react-router-dom";
 
 const HomeHero = () => {
@@ -20,8 +20,8 @@ const HomeHero = () => {
         </Link>
       </article>
       <article className="img-container">
-        <img src={Hero2} alt="nice table" className="main-img" />
-        <img src={Hero1} alt="person working" className="accent-img" />
+        <img src={HeroOne} alt="person working" className="accent-img" />
+        <img src={HeroTwo} alt=" nice table" className="main-img" />
       </article>
     </Wrapper>
   );
