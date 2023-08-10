@@ -1,10 +1,31 @@
-import { styled } from "styled-components"
+import { styled } from "styled-components";
+import Hero1 from "../assets/Hero-1.jpeg";
+import Hero2 from "../assets/Hero-2.jpeg";
+import { Link } from "react-router-dom";
 
 const HomeHero = () => {
   return (
-    <div>HomeHero</div>
-  )
-}
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>
+          Design your <br /> Comfort Zone
+        </h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque minus
+          esse, error voluptpora odit. Lorem, ipsum dolor sit amet consectetur
+          adipisicing elit. Iusto provident, quibusdam nulla a eveniet fugiat.
+        </p>
+        <Link to="/products" className="btn hero-btn">
+          shop now
+        </Link>
+      </article>
+      <article className="img-container">
+        <img src={Hero2} alt="nice table" className="main-img" />
+        <img src={Hero1} alt="person working" className="accent-img" />
+      </article>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   min-height: 60vh;
@@ -56,7 +77,7 @@ const Wrapper = styled.section`
       border-radius: var(--radius);
     }
     .img-container::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 10%;
       height: 80%;
@@ -66,6 +87,6 @@ const Wrapper = styled.section`
       border-radius: var(--radius);
     }
   }
-`
+`;
 
-export default HomeHero
+export default HomeHero;
