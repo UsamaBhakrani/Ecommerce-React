@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import Hero1 from "../assets/Hero-1.jpeg";
-import Hero2 from "../assets/Hero-2.jpeg";
+import Hero1 from "../assets/Hero1.jpeg";
+import Hero2 from "../assets/Hero2.jpeg";
 import { Link } from "react-router-dom";
 
 const HomeHero = () => {

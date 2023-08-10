@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 import { Hero } from "../components";
 import { Link } from "react-router-dom";
-import hero from "../assets/hero-2.jpeg";
+import hero from "../assets/hero2.jpeg";
 
 const AboutPage = () => {
   return (
     <main>
-      <Hero title='About' />
+      <Hero title="About" />
       <Wrapper className="page section section-center">
         <img src={hero} alt="nice desk" />
         <article>
