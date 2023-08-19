@@ -22,9 +22,19 @@ const SingleProductPage = () => {
     fetchSingleProduct,
   } = useProductsContext();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetchSingleProduct(`${url}${id}`);
+    fetchSingleProduct(`$s{url}${id}`);
   }, [id]);
+
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        navigate("/");
+      }, 4000);
+    }
+  }, [error]);
 
   if (loading) {
     return <Loading />;
@@ -32,6 +42,7 @@ const SingleProductPage = () => {
   if (error) {
     return <Error />;
   }
+
   return <Wrapper>SingleProductPage </Wrapper>;
 };
 
