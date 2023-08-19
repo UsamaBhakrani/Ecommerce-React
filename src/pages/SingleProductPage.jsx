@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { styled } from "styled-components";
-import { single_product_url as singleUrl } from "../utils/constants";
+import { single_product_url as url } from "../utils/constants";
 import { useProductsContext } from "../context/products_context";
 import { formatPrice } from "../utils/helpers";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -14,9 +14,24 @@ import {
 } from "../components";
 
 const SingleProductPage = () => {
-  const { fetchSingleProduct } = useProductsContext();
+  const { id } = useParams();
+  const {
+    single_product_loading: loading,
+    single_product_error: error,
+    single_product: product,
+    fetchSingleProduct,
+  } = useProductsContext();
 
+  useEffect(() => {
+    fetchSingleProduct(`${url}${id}`);
+  }, [id]);
 
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <Error />;
+  }
   return <Wrapper>SingleProductPage </Wrapper>;
 };
 
