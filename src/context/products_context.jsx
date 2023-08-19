@@ -60,13 +60,14 @@ const ProductsProvider = ({ children }) => {
     }
   };
 
-
   useEffect(() => {
     fetchProducts();
   }, []);
 
   return (
-    <ProductsContext.Provider value={{ ...state, openSideBar, closeSideBar }}>
+    <ProductsContext.Provider
+      value={{ ...state, openSideBar, closeSideBar, fetchSingleProduct }}
+    >
       {children}
     </ProductsContext.Provider>
   );

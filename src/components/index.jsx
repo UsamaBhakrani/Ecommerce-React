@@ -9,6 +9,9 @@ import HomeHero from "./HomeHero";
 import Loading from "./Loading";
 import Error from "./Error";
 import Product from "./Product";
+import ProductImages from "./ProductImages";
+import Stars from "./Stars";
+import AddToCart from "./AddToCart";
 
 export {
   NavBar,
@@ -22,4 +25,7 @@ export {
   Loading,
   Error,
   Product,
+  ProductImages,
+  Stars,
+  AddToCart,
 };
