@@ -6,6 +6,9 @@ import Services from "./Services";
 import Contact from "./Contact";
 import FeaturedProducts from "./FeaturedProducts";
 import HomeHero from "./HomeHero";
+import Loading from "./Loading";
+import Error from "./Error";
+import Product from "./Product";
 
 export {
   NavBar,
@@ -16,4 +19,7 @@ export {
   Contact,
   FeaturedProducts,
   HomeHero,
+  Loading,
+  Error,
+  Product,
 };
