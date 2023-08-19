@@ -25,7 +25,7 @@ const SingleProductPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchSingleProduct(`$s{url}${id}`);
+    fetchSingleProduct(`${url}${id}`);
   }, [id]);
 
   useEffect(() => {
