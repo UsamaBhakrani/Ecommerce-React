@@ -8,7 +8,6 @@ import { useProductsContext } from "../context/products_context";
 
 const SideBar = () => {
   const { isSideBarOpen, closeSideBar } = useProductsContext();
-  console.log(isSideBarOpen);
 
   return (
     <SidebarWrapper>
