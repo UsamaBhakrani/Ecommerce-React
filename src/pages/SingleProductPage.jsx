@@ -42,8 +42,28 @@ const SingleProductPage = () => {
   if (error) {
     return <Error />;
   }
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    reviews,
+    company,
+    images,
+    id: sku,
+  } = product;
 
-  return <Wrapper>SingleProductPage </Wrapper>;
+  return (
+    <Wrapper>
+      <Hero title={name} product />
+      <div className="section section-center">
+        <Link to="/products" className="btn">
+          back to products
+        </Link>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.main`
