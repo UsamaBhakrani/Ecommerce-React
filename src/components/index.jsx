@@ -12,6 +12,11 @@ import Product from "./Product";
 import ProductImages from "./ProductImages";
 import Stars from "./Stars";
 import AddToCart from "./AddToCart";
+import Sort from "./Sort";
+import Filters from "./Filters";
+import ProductList from "./ProductList";
+import ListView from "./ListView";
+import GridView from "./GridView";
 
 export {
   NavBar,
@@ -28,4 +33,9 @@ export {
   ProductImages,
   Stars,
   AddToCart,
+  Sort,
+  Filters,
+  ProductList,
+  ListView,
+  GridView,
 };
