@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { styled } from "styled-components";
+import { FaCheck } from "react-icons/fa";
 
 const AddToCart = ({ product }) => {
   const { id, colors, stock } = product;
@@ -11,7 +12,18 @@ const AddToCart = ({ product }) => {
         <span>Colors :</span>
         <div>
           {colors.map((color, index) => {
-            return <button key={crypto.randomUUID()}>{color}</button>;
+            return (
+              <button
+                key={crypto.randomUUID()}
+                className={
+                  mainColor === color ? "color-btn active" : "color-btn"
+                }
+                style={{ background: color }}
+                onClick={() => setMainColor(color)}
+              >
+                {mainColor === color ? <FaCheck/> : null}
+              </button>
+            );
           })}
         </div>
       </div>
