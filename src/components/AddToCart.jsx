@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { styled } from "styled-components";
 import { FaCheck } from "react-icons/fa";
+import AmountButtons from "./AmountButtons";
+import { Link } from "react-router-dom";
 
 const AddToCart = ({ product }) => {
   const { id, colors, stock } = product;
   const [mainColor, setMainColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
+
+  const increaseAmount = () => {};
+
+  const decreaseAmount = () => {};
 
   return (
     <Wrapper>
@@ -21,13 +28,18 @@ const AddToCart = ({ product }) => {
                 style={{ background: color }}
                 onClick={() => setMainColor(color)}
               >
-                {mainColor === color ? <FaCheck/> : null}
+                {mainColor === color ? <FaCheck /> : null}
               </button>
             );
           })}
         </div>
       </div>
-      <div className="btn-container"></div>
+      <div className="btn-container">
+        <AmountButtons />
+        <Link to={'/cart'} className="btn">
+          add to cart
+        </Link>
+      </div>
     </Wrapper>
   );
 };
