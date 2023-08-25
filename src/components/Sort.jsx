@@ -8,16 +8,25 @@ const Sort = () => {
     grid_view,
     sorting,
     updateSorting,
+    setGridview,
+    setListview,
   } = useFilterContext();
 
   return (
     <Wrapper>
       <div className="btn-container">
-        <button type="button" className={grid_view ? "active" : null}>
+        <button
+          type="button"
+          className={grid_view ? "active" : null}
+          onClick={setGridview}
+        >
           <BsFillGridFill />
         </button>
         <button type="button">
-          <BsList className={!grid_view ? "active" : null} />
+          <BsList
+            className={!grid_view ? "active" : null}
+            onClick={setListview}
+          />
         </button>
       </div>
       <p>{products.length} products found</p>
