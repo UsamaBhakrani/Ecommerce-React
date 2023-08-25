@@ -1,12 +1,21 @@
 import { styled } from "styled-components";
+import { formatPrice } from "../utils/helpers";
+import { Link } from "react-router-dom";
 
 const ListView = ({ products }) => {
   return (
     <Wrapper>
       {products.map(({ id, image, name, price, description }) => {
-        return <article key={id}>
-          <img src={image} alt={name} />
-        </article>
+        return (
+          <article key={id}>
+            <img src={image} alt={name} />
+            <div>
+              <h4>{name}</h4>
+              <h5 className="price">{formatPrice(price)}</h5>
+              <p>{description}</p>
+            </div>
+          </article>
+        );
       })}
     </Wrapper>
   );
