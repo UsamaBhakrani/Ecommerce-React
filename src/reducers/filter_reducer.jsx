@@ -35,6 +35,26 @@ const filter_reducer = (state, action) => {
       sorting: action.payload,
     };
   }
+  if (action.type === UPDATE_FILTERS) {
+    return {
+      ...state,
+    };
+  }
+  if (action.type === FILTER_PRODUCTS) {
+    return {
+      ...state,
+    };
+  }
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+    };
+  }
+  if (action.type === SORT_PRODUCTS) {
+    return {
+      ...state,
+    };
+  }
   throw new Error(`No Matching "${action.type}" - action type`);
 };
 
