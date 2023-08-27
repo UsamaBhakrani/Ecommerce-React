@@ -73,8 +73,10 @@ const filter_reducer = (state, action) => {
     };
   }
   if (action.type === UPDATE_FILTERS) {
+    const { name, value } = action.payload;
     return {
       ...state,
+      filters: { ...state.filters, search: value },
     };
   }
   if (action.type === FILTER_PRODUCTS) {
