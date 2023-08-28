@@ -56,6 +56,38 @@ const Filters = () => {
               })}
             </div>
           </div>
+          <div className="form-control">
+            <h5>company</h5>
+            <select
+              name="company"
+              value={company}
+              onChange={updateFilters}
+              className="company"
+            >
+              {companies.map((c) => {
+                return (
+                  <option value={c} key={c}>
+                    {c}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="form-control">
+            <h5>colors</h5>
+            <div className="colos">
+              {colors.map((c) => {
+                return (
+                  <button
+                    key={c}
+                    name="color"
+                    style={{ background: c }}
+                    className={color === c ? "color-btn active" : "color-btn"}
+                  ></button>
+                );
+              })}
+            </div>
+          </div>
         </form>
       </div>
     </Wrapper>
