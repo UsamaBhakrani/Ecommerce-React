@@ -67,7 +67,9 @@ export const FilterProvider = ({ children }) => {
     }
     if (name === "color") {
       value = e.target.dataset.color;
-      console.log(value);
+    }
+    if (name === "price") {
+      value = Number(value);
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
