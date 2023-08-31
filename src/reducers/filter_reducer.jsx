@@ -109,6 +109,11 @@ const filter_reducer = (state, action) => {
         return product.company === company
       })
     }
+    if (color !== 'all') {
+      tempProducts = tempProducts.filter(product => {
+        return product.colors.find((c) => c === color)
+      })
+    }
 
     return {
       ...state,
