@@ -87,6 +87,16 @@ const filter_reducer = (state, action) => {
   if (action.type === CLEAR_FILTERS) {
     return {
       ...state,
+      filters: {
+        search: "",
+        company: "all",
+        category: "all",
+        color: "",
+        min_price: 0,
+        max_price: 0,
+        price: 0,
+        shipping: false,
+      },
     };
   }
 
