@@ -3,9 +3,13 @@ import { styled } from "styled-components";
 import { FaCheck } from "react-icons/fa";
 import AmountButtons from "./AmountButtons";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/cart_context";
 
 const AddToCart = ({ product }) => {
+  const { addToCart } = useCartContext();
+
   const { id, colors, stock } = product;
+
   const [mainColor, setMainColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
@@ -20,7 +24,7 @@ const AddToCart = ({ product }) => {
     });
   };
 
-    // Decrease Quantity Functionality in Cart Button
+  // Decrease Quantity Functionality in Cart Button
   const decreaseAmount = () => {
     setAmount((oldAmount) => {
       let tempAmount = oldAmount - 1;
@@ -58,7 +62,11 @@ const AddToCart = ({ product }) => {
           decrease={decreaseAmount}
           increase={increaseAmount}
         />
-        <Link to={"/cart"} className="btn">
+        <Link
+          to={"/cart"}
+          className="btn"
+          onClick={(id, mainColor, amount, product) => addToCart}
+        >
           add to cart
         </Link>
       </div>
