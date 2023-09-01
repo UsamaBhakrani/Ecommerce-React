@@ -20,14 +20,20 @@ const Filters = () => {
     all_products,
   } = useFilterContext();
 
+  // Utitlizing helper function named getUniqueValues to get Unique Categories for Filter Functionality
   const categories = getUniqueValues(all_products, "category");
+
+  // Utitlizing helper function named getUniqueValues to get Unique Companies for Filter Functionality
   const companies = getUniqueValues(all_products, "company");
+
+  // Utitlizing helper function named getUniqueValues to get Unique Colors for Filter Functionality
   const colors = getUniqueValues(all_products, "colors");
 
   return (
     <Wrapper>
       <div className="content">
         <form onSubmit={(e) => e.preventDefault()}>
+          {/* Start of Search Input */}
           <div className="form-control">
             <input
               type="text"
@@ -38,6 +44,9 @@ const Filters = () => {
               onChange={updateFilters}
             />
           </div>
+          {/* End of Search Input */}
+
+          {/* Start of Category Filters */}
           <div className="form-control">
             <h5>category</h5>
             <div>
@@ -56,6 +65,9 @@ const Filters = () => {
               })}
             </div>
           </div>
+          {/* End of Category Filters */}
+
+          {/* Start of Comapany Filter */}
           <div className="form-control">
             <h5>company</h5>
             <select
@@ -73,6 +85,9 @@ const Filters = () => {
               })}
             </select>
           </div>
+          {/* End of Category Filters */}
+
+          {/* Start of Colors Filters */}
           <div className="form-control">
             <h5>colors</h5>
             <div className="colors">
@@ -105,6 +120,9 @@ const Filters = () => {
               })}
             </div>
           </div>
+          {/* End of Colors Filters */}
+
+          {/* Start of Price Slider Filter */}
           <div className="form-control">
             <h5>price</h5>
             <p className="price">{formatPrice(price)}</p>
@@ -117,6 +135,9 @@ const Filters = () => {
               value={price}
             />
           </div>
+          {/* End of Price Slider Filter */}
+
+          {/* Start of Free Shipping Checkbox Filter */}
           <div className="form-control shipping">
             <label htmlFor="shipping">free shipping</label>
             <input
@@ -127,10 +148,14 @@ const Filters = () => {
               checked={shipping}
             />
           </div>
+          {/* End of Free Shipping Checkbox Filter */}
         </form>
+
+        {/* Clear Filters Functionality */}
         <button className="clear-btn" type="button" onClick={clearFilters}>
           clear filters
         </button>
+        {/* Clear Filters Functionality */}
       </div>
     </Wrapper>
   );

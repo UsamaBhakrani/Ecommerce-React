@@ -9,6 +9,7 @@ const AddToCart = ({ product }) => {
   const [mainColor, setMainColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
+  // Increase Quantity Functionality in Cart Button
   const increaseAmount = () => {
     setAmount((oldAmount) => {
       let tempAmount = oldAmount + 1;
@@ -19,6 +20,7 @@ const AddToCart = ({ product }) => {
     });
   };
 
+    // Decrease Quantity Functionality in Cart Button
   const decreaseAmount = () => {
     setAmount((oldAmount) => {
       let tempAmount = oldAmount - 1;
@@ -34,7 +36,7 @@ const AddToCart = ({ product }) => {
       <div className="colors">
         <span>Colors :</span>
         <div>
-          {colors.map((color, index) => {
+          {colors.map((color) => {
             return (
               <button
                 key={crypto.randomUUID()}
@@ -63,6 +65,7 @@ const AddToCart = ({ product }) => {
     </Wrapper>
   );
 };
+
 const Wrapper = styled.section`
   margin-top: 2rem;
 
