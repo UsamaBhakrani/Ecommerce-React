@@ -15,6 +15,8 @@ const initialState = {
   shipping_fee: 534,
 };
 
+
+
 const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
