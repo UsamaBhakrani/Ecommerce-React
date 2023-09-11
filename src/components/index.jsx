@@ -22,6 +22,7 @@ import CartItem from "./CartItem";
 import CartColumn from "./CartColumn";
 import CartTotal from "./CartTotal";
 import CartButtons from "./CartButtons";
+import AmountButtons from "./AmountButtons";
 
 export {
   NavBar,
@@ -48,4 +49,5 @@ export {
   CartItem,
   CartColumn,
   CartTotal,
+  AmountButtons,
 };
