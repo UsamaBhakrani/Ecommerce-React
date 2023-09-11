@@ -5,7 +5,28 @@ import { useUserContext } from "../context/user_context";
 import { formatPrice } from "../utils/helpers";
 
 const CartTotal = () => {
-  return <Wrapper></Wrapper>;
+  const { total_amount, shipping_fee } = useCartContext();
+  return (
+    <Wrapper>
+      <div>
+        <article>
+          <h5>
+            subtotal: <span>{formatPrice(total_amount)}</span>
+          </h5>
+          <p>
+            shipping fee: <span>{formatPrice(shipping_fee)}</span>
+          </p>
+          <hr />
+          <h4>
+            Order Total: <span>{formatPrice(total_amount + shipping_fee)}</span>
+          </h4>
+        </article>
+        <Link to="/checkout" className="btn">
+          Proceed to Checkout
+        </Link>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
