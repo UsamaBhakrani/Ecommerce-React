@@ -25,12 +25,19 @@ const CartItem = ({ id, image, name, color, price, amount }) => {
       </div>
       <h5 className="price">{formatPrice(price)}</h5>
       <AmountButtons amount={amount} increase={increase} decrease={decrease} />
+      <h5 className="subtotal">{formatPrice(price * amount)}</h5>
+      <button
+        type="button"
+        className="remove-btn"
+        onClick={() => removeItem(id)}
+      >
+        <FaTrash />
+      </button>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.article`
-
   .subtotal {
     display: none;
   }
