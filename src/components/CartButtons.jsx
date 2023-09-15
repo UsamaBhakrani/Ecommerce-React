@@ -3,10 +3,8 @@ import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { useCartContext } from "../context/cart_context";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const CartButtons = () => {
-  const { loginWithRedirect } = useAuth0();
   const { closeSideBar } = useProductsContext();
   const { total_items } = useCartContext();
 
@@ -21,11 +19,7 @@ const CartButtons = () => {
       </Link>
 
       <Link className="cart-btn" onClick={closeSideBar}>
-        <button
-          type="button"
-          className="auth-btn"
-          onClick={() => loginWithRedirect()}
-        >
+        <button type="button" className="auth-btn">
           Login
           <FaUserPlus />
         </button>

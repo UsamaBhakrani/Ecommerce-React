@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { ProductsProvider } from "./context/products_context";
 import { FilterProvider } from "./context/filter_context.jsx";
 import { CartProvider } from "./context/cart_context.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
-import "./index.css";
+import { UserProvider } from "./context/user_context.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Auth0Provider
@@ -17,14 +18,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     }}
     cacheLocation="localstorage"
   >
-    <BrowserRouter>
-      <ProductsProvider>
-        <FilterProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </FilterProvider>
-      </ProductsProvider>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <ProductsProvider>
+          <FilterProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </FilterProvider>
+        </ProductsProvider>
+      </BrowserRouter>
+    </UserProvider>
   </Auth0Provider>
 );
