@@ -3,10 +3,13 @@ import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { useCartContext } from "../context/cart_context";
+import { useUserContext } from "../context/user_context";
 
 const CartButtons = () => {
   const { closeSideBar } = useProductsContext();
   const { total_items } = useCartContext();
+  const { loginWithRedirect, logout, myUser, isAuthenticated } =
+    useUserContext();
 
   return (
     <Wrapper className="cart-btn-wrapper">
@@ -22,6 +25,10 @@ const CartButtons = () => {
         <button type="button" className="auth-btn">
           Login
           <FaUserPlus />
+        </button>
+        <button className="auth-btn" type="button">
+          Logout
+          <FaUserMinus />
         </button>
       </Link>
     </Wrapper>
