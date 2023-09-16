@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     domain="dev-7zel80584lh3lkv7.us.auth0.com"
     clientId="KAEUQHo5nKVVtWQj3WNu0pBUbCDApBJT"
     authorizationParams={{
-      redirect_uri: window.location.origin,
+      redirect_uri: "https://timbertinder.netlify.com",
     }}
     cacheLocation="localstorage"
   >
