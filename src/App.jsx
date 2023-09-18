@@ -23,7 +23,10 @@ const App = () => {
         <Route path="products" element={<ProductPage />} />
         <Route path="products/:id" element={<SingleProductPage />} />
         <Route path="cart" element={<CartPage />} />
-        <Route path="checkout" element={<CheckOutPage />} />
+        <Route
+          path="checkout"
+          element={<PrivateRoute component={CheckOutPage} />}
+        />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
