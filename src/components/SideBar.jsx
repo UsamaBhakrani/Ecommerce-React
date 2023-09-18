@@ -5,9 +5,11 @@ import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
 import logo from "../assets/logo.svg";
 import { useProductsContext } from "../context/products_context";
+import { useUserContext } from "../context/user_context";
 
 const SideBar = () => {
   const { isSideBarOpen, closeSideBar } = useProductsContext();
+  const { myUser } = useUserContext();
 
   return (
     <SidebarWrapper>
@@ -28,11 +30,13 @@ const SideBar = () => {
               </li>
             );
           })}
-          <li>
-            <Link to="/checkout" onClick={closeSideBar}>
-              Checkout
-            </Link>
-          </li>
+          {myUser && (
+            <li>
+              <Link to="/checkout" onClick={closeSideBar}>
+                Checkout
+              </Link>
+            </li>
+          )}
         </ul>
         <CartButtons />
       </aside>
