@@ -1,15 +1,12 @@
-import { Route, Navigate, redirect } from "react-router-dom";
-import { useUserContext } from "../context/user_context";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
-import CheckoutPage from "./CheckOutPage";
+import { CheckOutPage } from ".";
+import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ component }) => {
-  const { myUser } = useUserContext();
   const Component = withAuthenticationRequired(component, {
-    returnTo: () => {
-      {
-        myUser ? <CheckoutPage /> : <Navigate to="/" />;
-      }
+    returnTo: () => "/checkout",
+    onRedirecting: () => {
+      return <h2>Loading...</h2>;
     },
   });
   return <Component />;
