@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { useProductsContext } from "../context/products_context";
 import { Error, Product, Loading } from "../components";
+import { Link } from "react-router-dom";
 
 const FeaturedProducts = () => {
   const {
@@ -26,6 +27,9 @@ const FeaturedProducts = () => {
           <Product key={product.id} {...product} />
         ))}
       </div>
+      <Link to="/products" className="btn">
+        all products
+      </Link>
     </Wrapper>
   );
 };
