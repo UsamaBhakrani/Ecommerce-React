@@ -3,7 +3,7 @@ import { Loading } from "../components";
 
 const PrivateRoute = ({ component }) => {
   const Component = withAuthenticationRequired(component, {
-    returnTo: () => "/checkout",
+    returnTo: () => "/home",
     onRedirecting: () => {
       return (
         <h2>

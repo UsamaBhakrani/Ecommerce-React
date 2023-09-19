@@ -8,13 +8,14 @@ import {
   PrivateRoute,
   ProductPage,
   SingleProductPage,
+  AuthWrapper,
 } from "./pages";
 
 import { NavBar, SideBar, Footer } from "./components";
 
 const App = () => {
   return (
-    <>
+    <AuthWrapper>
       <NavBar />
       <SideBar />
       <Routes>
@@ -30,7 +31,7 @@ const App = () => {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
-    </>
+    </AuthWrapper>
   );
 };
 
