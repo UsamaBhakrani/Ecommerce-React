@@ -12,10 +12,19 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 
+const CheckoutForm = () => {
+  return <h4>hello from Stripe Checkout </h4>;
+};
 
+const StripeCheckout = () => {
+  return (
+    <Wrapper>
+      <CheckoutForm />
+    </Wrapper>
+  );
+};
 
-
-
+useEffect(() => {}, []);
 
 const Wrapper = styled.section`
   form {
@@ -114,7 +123,7 @@ const Wrapper = styled.section`
   .spinner:before,
   .spinner:after {
     position: absolute;
-    content: '';
+    content: "";
   }
   .spinner:before {
     width: 10.4px;
@@ -155,4 +164,6 @@ const Wrapper = styled.section`
       width: 80vw;
     }
   }
-`
+`;
+
+export default StripeCheckout;
